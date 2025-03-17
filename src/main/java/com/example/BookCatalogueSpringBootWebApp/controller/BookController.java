@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.BookCatalogueSpringBootWebApp.service.BookService;
-import com.example.BookCatalogueSpringBootWebApp.util.BookUtil;
 import com.example.BookCatalogueSpringBootWebApp.model.Book;
 import java.util.List;
 
