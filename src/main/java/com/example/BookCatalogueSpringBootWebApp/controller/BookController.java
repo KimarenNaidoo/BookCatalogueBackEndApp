@@ -20,25 +20,22 @@ public class BookController {
 	@GetMapping("/")
     public List<Book> getAllBooks() {
         List<Book> books = bookService.getAllBooks();
-		StringBuffer stringBuffer = new StringBuffer();
-		for (Book book : books)
-		{
-			stringBuffer.append(new BookUtil(book).displayBookString());
-			stringBuffer.append("<br>");
-		}
 
 		return books;
     }
 
 	@GetMapping("/{id}")
-	public String getBookById(@PathVariable("id") Long id) {
+	public Book getBookById(@PathVariable("id") Long id) {
+		Book book = null;
+
 		try {
-			Book book = bookService.getBookById(id).get();
-			return new BookUtil(book).displayBookString();
+			book = bookService.getBookById(id).get();
 		} catch(Exception e) {
-			return "Error: Unable to resolve Book entry with Id: " + id;
+			System.err.println("Error: Unable to resolve Book entry with Id: " + id);
+	
 		}
 		
+		return book;
 	}
 
 }
