@@ -18,7 +18,7 @@ public class BookController {
 	public BookService bookService = new BookService();
 
 	@GetMapping("/")
-    public String getAllBooks() {
+    public List<Book> getAllBooks() {
         List<Book> books = bookService.getAllBooks();
 		StringBuffer stringBuffer = new StringBuffer();
 		for (Book book : books)
@@ -27,7 +27,7 @@ public class BookController {
 			stringBuffer.append("<br>");
 		}
 
-		return stringBuffer.toString();
+		return books;
     }
 
 	@GetMapping("/{id}")
