@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.BookCatalogueSpringBootWebApp.service.BookService;
-import com.example.BookCatalogueSpringBootWebApp.util.BookUtil;
 import com.example.BookCatalogueSpringBootWebApp.model.Book;
 import java.util.List;
 
@@ -18,27 +17,24 @@ public class BookController {
 	public BookService bookService = new BookService();
 
 	@GetMapping("/")
-    public String getAllBooks() {
+    public List<Book> getAllBooks() {
         List<Book> books = bookService.getAllBooks();
-		StringBuffer stringBuffer = new StringBuffer();
-		for (Book book : books)
-		{
-			stringBuffer.append(new BookUtil(book).displayBookString());
-			stringBuffer.append("<br>");
-		}
 
-		return stringBuffer.toString();
+		return books;
     }
 
 	@GetMapping("/{id}")
-	public String getBookById(@PathVariable("id") Long id) {
+	public Book getBookById(@PathVariable("id") Long id) {
+		Book book = null;
+
 		try {
-			Book book = bookService.getBookById(id).get();
-			return new BookUtil(book).displayBookString();
+			book = bookService.getBookById(id).get();
 		} catch(Exception e) {
-			return "Error: Unable to resolve Book entry with Id: " + id;
+			System.err.println("Error: Unable to resolve Book entry with Id: " + id);
+	
 		}
 		
+		return book;
 	}
 
 }
