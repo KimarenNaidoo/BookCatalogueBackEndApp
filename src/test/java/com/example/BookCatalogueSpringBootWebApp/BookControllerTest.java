@@ -22,7 +22,7 @@ import static org.hamcrest.Matchers.containsString;
 public class BookControllerTest {
 
     private final String apiEndpoint = "/api/books/";
-    private final String getBooksEndpointResponseString = "{\"id\":1,\"title\":\"The Alchemist\",\"statusId\":2,\"categoryId\":3,\"author\":\"Paulo Coelho\",\"ownershipId\":0,\"isbn\":\"978-0-14-310565-5\",\"createDate\":\"2023-01-01\"}";
+    private final String getBooksEndpointResponseString = "{\"title\":\"The Alchemist\",\"status\":\"Finished\",\"category\":\"Fiction\",\"author\":\"Paulo Coelho\",\"ownership\":\"Unown\",\"isbn\":\"978-0-14-310565-5\"}";
 
     @Autowired
     private MockMvc mockMvc;
