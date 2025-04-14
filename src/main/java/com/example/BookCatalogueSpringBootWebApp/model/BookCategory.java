@@ -3,7 +3,7 @@ package com.example.BookCatalogueSpringBootWebApp.model;
 public enum BookCategory {
 
     SELFIMPROVEMENT_PSYCHOLOGY(0, "Self-Improvement/Psychology"),
-    SOFTWARE_TECHNOLOGY(1, "Software Engineering/Technolgy"),
+    SOFTWARE_TECHNOLOGY(1, "Software Engineering/Technology"),
     ENGINEERING_PHYSICS(2, "Engineering/Physics"),
     FICTION(3, "Fiction"),
     ART(4, "Art"),

@@ -28,7 +28,6 @@ public class BookControllerTest {
     private MockMvc mockMvc;
 
     BookService mockService = Mockito.mock(BookService.class);
-    BookController controller = new BookController();
 
     @Test
     public void testGetAllBooksEndpoint() throws Exception {

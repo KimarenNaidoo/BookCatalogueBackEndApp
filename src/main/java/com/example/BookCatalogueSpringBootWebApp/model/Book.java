@@ -2,10 +2,21 @@ package com.example.BookCatalogueSpringBootWebApp.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "books")
 public class Book implements Comparable<Book> {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private int statusId;
@@ -20,7 +31,7 @@ public class Book implements Comparable<Book> {
     public Book(){}
 
     public Book(long id, String title, int statusId, int categoryId, String author, int ownershipId, String isbn, LocalDate createDate) {
-        this.id = id; // Make this auto-incrememnt
+        this.id = id;
         this.title = title;
         this.statusId = statusId;
         this.categoryId = categoryId;

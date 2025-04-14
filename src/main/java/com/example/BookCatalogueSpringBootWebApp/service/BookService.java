@@ -1,10 +1,8 @@
 package com.example.BookCatalogueSpringBootWebApp.service;
 
 import org.springframework.stereotype.Service;
-
 import com.example.BookCatalogueSpringBootWebApp.model.Book;
-import com.example.BookCatalogueSpringBootWebApp.repository.BookRepository;
-
+import com.example.BookCatalogueSpringBootWebApp.repository.IBookRepository;
 import java.util.List;
 import java.util.Optional;  
 
@@ -12,19 +10,19 @@ import java.util.Optional;
 public class BookService {
 
     private List<Book> books;
-    private final BookRepository bookRepository;
+    private final IBookRepository bookRepository;
 
-    public BookService() {
-        bookRepository = new BookRepository();
-        this.books = bookRepository.loadBooksFromRepository();
+    public BookService(IBookRepository bookRepository) {
+        this.bookRepository = bookRepository; 
     }
 
     public List<Book> getAllBooks() {
+        books = bookRepository.findAll();
         return books;
     }
 
     public Optional<Book> getBookById(Long id) {
-        return books.stream().filter(book -> book.getId() == id).findFirst();
+        return bookRepository.findById(id);
     }
     
 }
