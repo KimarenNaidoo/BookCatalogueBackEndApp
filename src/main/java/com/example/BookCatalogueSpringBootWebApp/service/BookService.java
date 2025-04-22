@@ -2,7 +2,7 @@ package com.example.BookCatalogueSpringBootWebApp.service;
 
 import org.springframework.stereotype.Service;
 import com.example.BookCatalogueSpringBootWebApp.model.Book;
-import com.example.BookCatalogueSpringBootWebApp.repository.IBookRepository;
+import com.example.BookCatalogueSpringBootWebApp.repository.BookRepository;
 import java.util.List;
 import java.util.Optional;  
 
@@ -10,9 +10,9 @@ import java.util.Optional;
 public class BookService {
 
     private List<Book> books;
-    private final IBookRepository bookRepository;
+    private final BookRepository bookRepository;
 
-    public BookService(IBookRepository bookRepository) {
+    public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository; 
     }
 
