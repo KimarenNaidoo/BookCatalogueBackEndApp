@@ -2,14 +2,14 @@ package com.example.BookCatalogueSpringBootWebApp.model;
 
 public enum BookCategory {
 
-    SELFIMPROVEMENT_PSYCHOLOGY(0, "Self-Improvement/Psychology"),
-    SOFTWARE_TECHNOLOGY(1, "Software Engineering/Technology"),
-    ENGINEERING_PHYSICS(2, "Engineering/Physics"),
+    SELFIMPROVEMENT_PSYCHOLOGY(0, "Self-Improvement/ Psychology"),
+    SOFTWARE_TECHNOLOGY(1, "Software Engineering/ Technology"),
+    ENGINEERING_PHYSICS(2, "Engineering/ Physics"),
     FICTION(3, "Fiction"),
     ART(4, "Art"),
     ROMANCE(5, "Romance"),
     HISTORY(6, "History"),
-    MYSTERY_SPY_DETECTIVE(7, "Mystery/Spy/Detective");
+    MYSTERY_SPY_DETECTIVE(7, "Mystery/ Spy/ Detective");
 
     private int categoryId;
     private String categoryDisplayValue;
