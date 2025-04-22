@@ -16,7 +16,11 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/books")
 public class BookController {
 
-	public BookService bookService = new BookService();
+	private final BookService bookService;
+
+	public BookController(BookService bookService) {
+		this.bookService = bookService;
+	}
 
 	@GetMapping("/")
     public List<BookDTO> getAllBooks() {
@@ -33,7 +37,6 @@ public class BookController {
 			bookDTO = BookDTO.fromEntity(book);
 		} catch(Exception e) {
 			System.err.println("Error: Unable to resolve Book entry with Id: " + id);
-	
 		}
 		
 		return bookDTO;

@@ -12,6 +12,16 @@ jobs:
 
     runs-on: ubuntu-latest 
 
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: bookcatalogueuser
+          POSTGRES_PASSWORD: "{BookCat}1511"
+          POSTGRES_DB: bookcataloguedb
+        ports: 
+          - 5432:5432
+
     steps:
     - uses: actions/checkout@v4
 
