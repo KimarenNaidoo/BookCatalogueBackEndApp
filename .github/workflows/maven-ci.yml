@@ -16,8 +16,8 @@ jobs:
       postgres:
         image: postgres:latest
         env:
-          POSTGRES_USER: bookcatalogueuser
-          POSTGRES_PASSWORD: "{BookCat}1511"
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
           POSTGRES_DB: bookcataloguedb
         ports: 
           - 5432:5432
