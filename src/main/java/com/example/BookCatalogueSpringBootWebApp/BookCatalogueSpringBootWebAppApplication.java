@@ -18,10 +18,14 @@ public class BookCatalogueSpringBootWebAppApplication {
 
 
 	private static void setEnvironmentalVariables() {
-		Dotenv dotenv = Dotenv.load();
-		System.setProperty("DATABASE_URL", dotenv.get("DATABASE_URL"));
-		System.setProperty("DATABASE_USERNAME", dotenv.get("DATABASE_USERNAME"));
-		System.setProperty("DATABASE_PASSWORD", dotenv.get("DATABASE_PASSWORD"));
+		Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
+		String dbUrl = dotenv.get("DATABASE_URL", dotenv.get("DATABASE_URL"));
+		String dbUsername = dotenv.get("DATABASE_USERNAME", dotenv.get("DATABASE_USERNAME"));
+		String dbPassword = dotenv.get("DATABASE_PASSWORD", dotenv.get("DATABASE_PASSWORD"));
+
+		System.setProperty("DATABASE_URL", dbUrl);
+		System.setProperty("DATABASE_USERNAME", dbUsername);
+		System.setProperty("DATABASE_PASSWORD", dbPassword);
 	}
 
 }
