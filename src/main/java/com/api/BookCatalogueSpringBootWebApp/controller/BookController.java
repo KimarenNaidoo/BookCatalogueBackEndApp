@@ -1,14 +1,14 @@
-package com.example.BookCatalogueSpringBootWebApp.controller;
+package com.api.BookCatalogueSpringBootWebApp.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.BookCatalogueSpringBootWebApp.service.BookService;
-import com.example.BookCatalogueSpringBootWebApp.util.APIUtil;
-import com.example.BookCatalogueSpringBootWebApp.dto.BookDTO;
-import com.example.BookCatalogueSpringBootWebApp.model.Book;
+import com.api.BookCatalogueSpringBootWebApp.dto.BookDTO;
+import com.api.BookCatalogueSpringBootWebApp.model.Book;
+import com.api.BookCatalogueSpringBootWebApp.service.BookService;
+import com.api.BookCatalogueSpringBootWebApp.util.APIUtil;
 
 import java.util.ArrayList;
 import java.util.List;

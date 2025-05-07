@@ -1,4 +1,4 @@
-package com.example.BookCatalogueSpringBootWebApp.model;
+package com.api.BookCatalogueSpringBootWebApp.model;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonFormat;

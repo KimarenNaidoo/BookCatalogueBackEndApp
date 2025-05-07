@@ -1,4 +1,4 @@
-package com.example.BookCatalogueSpringBootWebApp.util;
+package com.api.BookCatalogueSpringBootWebApp.util;
 
 public class APIUtil {
 
