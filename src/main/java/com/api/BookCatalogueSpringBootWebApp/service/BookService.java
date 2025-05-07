@@ -1,8 +1,10 @@
-package com.example.BookCatalogueSpringBootWebApp.service;
+package com.api.BookCatalogueSpringBootWebApp.service;
 
 import org.springframework.stereotype.Service;
-import com.example.BookCatalogueSpringBootWebApp.model.Book;
-import com.example.BookCatalogueSpringBootWebApp.repository.BookRepository;
+
+import com.api.BookCatalogueSpringBootWebApp.model.Book;
+import com.api.BookCatalogueSpringBootWebApp.repository.BookRepository;
+
 import java.util.List;
 import java.util.Optional;  
 

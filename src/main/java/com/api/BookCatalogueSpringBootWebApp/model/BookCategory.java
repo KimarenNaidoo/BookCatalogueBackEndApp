@@ -1,4 +1,4 @@
-package com.example.BookCatalogueSpringBootWebApp.model;
+package com.api.BookCatalogueSpringBootWebApp.model;
 
 public enum BookCategory {
 

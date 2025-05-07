@@ -1,7 +1,7 @@
-package com.example.BookCatalogueSpringBootWebApp.dto;
+package com.api.BookCatalogueSpringBootWebApp.dto;
 
-import com.example.BookCatalogueSpringBootWebApp.model.Book;
-import com.example.BookCatalogueSpringBootWebApp.util.BookUtil;
+import com.api.BookCatalogueSpringBootWebApp.model.Book;
+import com.api.BookCatalogueSpringBootWebApp.util.BookUtil;
 
 public class BookDTO {
     

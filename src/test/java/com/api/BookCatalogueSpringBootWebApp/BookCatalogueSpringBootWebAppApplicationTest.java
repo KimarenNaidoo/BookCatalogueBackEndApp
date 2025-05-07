@@ -1,4 +1,4 @@
-package com.example.BookCatalogueSpringBootWebApp;
+package com.api.BookCatalogueSpringBootWebApp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
