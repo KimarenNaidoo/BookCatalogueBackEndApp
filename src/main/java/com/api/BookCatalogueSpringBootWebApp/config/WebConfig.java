@@ -1,4 +1,4 @@
-package com.example.BookCatalogueSpringBootWebApp.config;
+package com.api.BookCatalogueSpringBootWebApp.config;
 
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.context.annotation.Configuration;

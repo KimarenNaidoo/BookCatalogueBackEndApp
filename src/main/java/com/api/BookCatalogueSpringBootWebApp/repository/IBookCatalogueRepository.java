@@ -1,4 +1,4 @@
-package com.example.BookCatalogueSpringBootWebApp.repository;
+package com.api.BookCatalogueSpringBootWebApp.repository;
 
 import java.io.Serializable;
 import org.springframework.data.jpa.repository.JpaRepository;

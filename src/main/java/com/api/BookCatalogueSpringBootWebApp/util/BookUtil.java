@@ -1,11 +1,11 @@
-package com.example.BookCatalogueSpringBootWebApp.util;
+package com.api.BookCatalogueSpringBootWebApp.util;
 
 import java.time.format.DateTimeFormatter;
 
-import com.example.BookCatalogueSpringBootWebApp.model.Book;
-import com.example.BookCatalogueSpringBootWebApp.model.BookCategory;
-import com.example.BookCatalogueSpringBootWebApp.model.BookOwnership;
-import com.example.BookCatalogueSpringBootWebApp.model.BookStatus;
+import com.api.BookCatalogueSpringBootWebApp.model.Book;
+import com.api.BookCatalogueSpringBootWebApp.model.BookCategory;
+import com.api.BookCatalogueSpringBootWebApp.model.BookOwnership;
+import com.api.BookCatalogueSpringBootWebApp.model.BookStatus;
 
 public class BookUtil {
 
