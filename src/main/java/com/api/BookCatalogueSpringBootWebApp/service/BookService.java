@@ -26,5 +26,9 @@ public class BookService {
     public Optional<Book> getBookById(Long id) {
         return bookRepository.findById(id);
     }
+
+    public List<Book> getAllBooksPagination(int offset, int limit) {
+        return bookRepository.findBooksWithPagination(offset, limit);
+    }
     
 }

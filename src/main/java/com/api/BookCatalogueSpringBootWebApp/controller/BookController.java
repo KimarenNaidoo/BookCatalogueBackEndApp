@@ -3,6 +3,7 @@ package com.api.BookCatalogueSpringBootWebApp.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.BookCatalogueSpringBootWebApp.dto.BookDTO;
@@ -47,15 +48,40 @@ public class BookController {
 		Book book = null;
 		BookDTO bookDTO = null;
 
-		try {
-			apiComponent.logApiCall("getBookById");
-			book = bookService.getBookById(id).get();
-			bookDTO = BookDTO.fromEntity(book);
-		} catch(Exception e) {
-			System.err.println("Error: Unable to resolve Book entry with Id: " + id);
+		if (id > 0) {
+			try {
+				apiComponent.logApiCall("getBookById");
+				book = bookService.getBookById(id).get();
+				bookDTO = BookDTO.fromEntity(book);
+			} catch(Exception e) {
+				System.err.println("Error: Unable to resolve Book entry with Id: " + id);
+			}
+		} else {
+			System.err.println("Error: Invalid Book Id: " + id);
 		}
 		
 		return bookDTO;
 	}
+
+	// api/v1/books?offset=0&limit=10
+	@GetMapping("/pagination")
+    public List<BookDTO> getAllBooksPagination(@RequestParam("offset") int offset, @RequestParam("limit") int limit) {
+		List<BookDTO> bookDTOs = new ArrayList();
+		
+		if (offset >= 0 && (limit > 0 && limit <= 10)) {
+			try {
+				apiComponent.logApiCall("getAllBooksPagination");
+				bookDTOs = bookService.getAllBooksPagination(offset, limit).stream().map(BookDTO::fromEntity).collect(Collectors.toList());
+			}
+			catch (Exception e) {
+				System.err.println("Error: Unable to retrieve book entries");
+			}
+		} else {
+			System.err.println("Error: Invalid pagination parameters");
+		}
+
+		return bookDTOs;
+    }
+
 
 }
